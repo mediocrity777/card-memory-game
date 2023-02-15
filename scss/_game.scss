@@ -1,0 +1,194 @@
+.card-game {
+	padding-top: 60px;
+	&__title {
+		text-align: center;
+		font-size: 32px;
+		margin-bottom: 40px;
+	}
+}
+.scoreboard {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+	justify-content: space-around;
+	&__timer {
+		display: flex;
+	}
+
+	&__buttons {
+		display: flex;
+		gap: 0 10px;
+	}
+	&__reload {
+		width: 25px;
+		height: 25px;
+		cursor: pointer;
+	}
+
+	&__exit img {
+		width: 25px;
+		height: 25px;
+	}
+}
+
+.card-game__board {
+	margin: 0 auto;
+	height: 650px;
+	border-collapse: separate;
+	border-spacing: 20px;
+	padding: 20px 0;
+	background: linear-gradient(90deg, #cfecd0, #ffc5ca);
+
+	border-radius: 10px;
+	& td {
+		height: 25%;
+		border-radius: 10px;
+	}
+	& .card__container {
+		background-color: #28353f;
+		cursor: pointer;
+		transition: all 0.6s;
+	}
+
+	& .card__container.flipped {
+		background-color: #f0f8ff;
+		transition: all 0.3s;
+	}
+}
+
+.front-face {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	object-position: center;
+	opacity: 0;
+}
+
+.card__container.flipped .front-face {
+	animation: anim 0.3s forwards;
+}
+
+@keyframes anim {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.card__container.done {
+	transform: scale(0.9);
+	background-color: #87cefa;
+	opacity: 0.1;
+}
+
+table {
+	&[data-gamemode="1"] {
+		width: 500px;
+	}
+	&[data-gamemode="2"] {
+		width: 600px;
+	}
+	&[data-gamemode="3"] {
+		width: 750px;
+	}
+	&[data-gamemode="4"] {
+		width: 850px;
+	}
+	&[data-gamemode="5"] {
+		width: 900px;
+	}
+
+	&[data-gamemode="5"] .front-face {
+		width: 90%;
+	}
+
+	&[data-gamemode="1"] td,
+	&[data-gamemode="2"] td {
+		width: 25%;
+	}
+
+	&[data-gamemode="3"] td {
+		width: 20%;
+	}
+
+	&[data-gamemode="4"] td,
+	&[data-gamemode="5"] td {
+		width: 15%;
+	}
+}
+
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	transition: all 0.5s;
+	z-index: -1;
+	&__container {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) scale(0);
+		background: #fff;
+		width: 450px;
+		height: 470px;
+		padding: 25px;
+		transition: 0.5s all;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__title {
+		font-size: 32px;
+		text-align: center;
+		padding-top: 10px;
+		margin-bottom: 15px;
+	}
+
+	&__img {
+		width: 170px;
+		height: 170px;
+		margin-bottom: 20px;
+	}
+
+	&__img img {
+		width: 100%;
+		height: 100%;
+	}
+
+	&__content {
+		font-size: 18px;
+		line-height: 26px;
+		margin-bottom: 25px;
+		text-align: center;
+	}
+
+	&__link {
+		padding: 10px;
+		width: 150px;
+		display: inline-block;
+		text-align: center;
+		background: #ffffad;
+	}
+	&__link:first-child {
+		margin-right: 40px;
+		background-color: #90ee90;
+	}
+}
+
+.popup.visible {
+	opacity: 1;
+	transition: 0.5s all;
+	z-index: 1;
+}
+
+.popup.visible .popup__container {
+	transform: translate(-50%, -50%) scale(1);
+	transition: 0.5s all;
+}

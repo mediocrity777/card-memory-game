@@ -1,0 +1,256 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.wrapper {
+  max-width: 1240px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  padding-top: 200px;
+}
+
+.title {
+  font-size: 32px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.form__block {
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
+  height: 80px;
+  align-items: center;
+  margin-bottom: 20px;
+  background: #f3f5f8;
+  box-shadow: 0px 16px 32px -6px rgba(7, 0, 28, 0.02), 0px 8px 16px -3px rgba(7, 0, 28, 0.03), 0px 4px 8px -1px rgba(7, 0, 28, 0.03);
+  border-radius: 24px;
+  padding: 30px 40px;
+}
+.form__block-number {
+  font-size: 50px;
+}
+.form__block-difficulty {
+  font-size: 18px;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.start-btn {
+  background-image: url(../images/play.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+}
+
+.start-btn svg:hover {
+  fill: red;
+}
+
+.card-game {
+  padding-top: 60px;
+}
+.card-game__title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.scoreboard {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: space-around;
+}
+.scoreboard__timer {
+  display: flex;
+}
+.scoreboard__buttons {
+  display: flex;
+  gap: 0 10px;
+}
+.scoreboard__reload {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.scoreboard__exit img {
+  width: 25px;
+  height: 25px;
+}
+
+.card-game__board {
+  margin: 0 auto;
+  height: 650px;
+  border-collapse: separate;
+  border-spacing: 20px;
+  padding: 20px 0;
+  background: linear-gradient(90deg, #cfecd0, #ffc5ca);
+  border-radius: 10px;
+}
+.card-game__board td {
+  height: 25%;
+  border-radius: 10px;
+}
+.card-game__board .card__container {
+  background-color: #28353f;
+  cursor: pointer;
+  transition: all 0.6s;
+}
+.card-game__board .card__container.flipped {
+  background-color: #f0f8ff;
+  transition: all 0.3s;
+}
+
+.front-face {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  opacity: 0;
+}
+
+.card__container.flipped .front-face {
+  animation: anim 0.3s forwards;
+}
+
+@keyframes anim {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.card__container.done {
+  transform: scale(0.9);
+  background-color: #87cefa;
+  opacity: 0.1;
+}
+
+table[data-gamemode="1"] {
+  width: 500px;
+}
+table[data-gamemode="2"] {
+  width: 600px;
+}
+table[data-gamemode="3"] {
+  width: 750px;
+}
+table[data-gamemode="4"] {
+  width: 850px;
+}
+table[data-gamemode="5"] {
+  width: 900px;
+}
+table[data-gamemode="5"] .front-face {
+  width: 90%;
+}
+table[data-gamemode="1"] td, table[data-gamemode="2"] td {
+  width: 25%;
+}
+table[data-gamemode="3"] td {
+  width: 20%;
+}
+table[data-gamemode="4"] td, table[data-gamemode="5"] td {
+  width: 15%;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: all 0.5s;
+  z-index: -1;
+}
+.popup__container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: #fff;
+  width: 450px;
+  height: 470px;
+  padding: 25px;
+  transition: 0.5s all;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.popup__title {
+  font-size: 32px;
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: 15px;
+}
+.popup__img {
+  width: 170px;
+  height: 170px;
+  margin-bottom: 20px;
+}
+.popup__img img {
+  width: 100%;
+  height: 100%;
+}
+.popup__content {
+  font-size: 18px;
+  line-height: 26px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+.popup__link {
+  padding: 10px;
+  width: 150px;
+  display: inline-block;
+  text-align: center;
+  background: #ffffad;
+}
+.popup__link:first-child {
+  margin-right: 40px;
+  background-color: #90ee90;
+}
+
+.popup.visible {
+  opacity: 1;
+  transition: 0.5s all;
+  z-index: 1;
+}
+
+.popup.visible .popup__container {
+  transform: translate(-50%, -50%) scale(1);
+  transition: 0.5s all;
+}/*# sourceMappingURL=style.css.map */

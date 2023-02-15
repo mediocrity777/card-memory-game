@@ -1,0 +1,54 @@
+body {
+	display: flex;
+	justify-content: center;
+}
+.content {
+	padding-top: 200px;
+}
+.title {
+	font-size: 32px;
+	margin-bottom: 40px;
+	text-align: center;
+}
+.form__block {
+	display: flex;
+	justify-content: space-between;
+	width: 700px;
+	height: 80px;
+	align-items: center;
+	margin-bottom: 20px;
+	background: #f3f5f8;
+	box-shadow: 0px 16px 32px -6px rgba(7, 0, 28, 0.02), 0px 8px 16px -3px rgba(7, 0, 28, 0.03),
+		0px 4px 8px -1px rgba(7, 0, 28, 0.03);
+	border-radius: 24px;
+	padding: 30px 40px;
+	&-number {
+		font-size: 50px;
+	}
+
+	&-difficulty {
+		font-size: 18px;
+	}
+}
+
+button {
+	padding: 0;
+	border: none;
+	font: inherit;
+	color: inherit;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.start-btn {
+	background-image: url(../images/play.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 50px;
+	height: 50px;
+}
+
+.start-btn svg:hover {
+	fill: red;
+}

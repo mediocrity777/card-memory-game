@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Game</title>
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<div class="card-game">
+			<h1 class="card-game__title">Соотнеси картинки</h1>
+			<div class="scoreboard">
+				<div class="scoreboard__difficulty"></div>
+				<div class="scoreboard__timer">
+					<div class="scoreboard__timer-minutes">00:</div>
+					<div class="scoreboard__timer-seconds">00</div>
+				</div>
+				<div class="scoreboard__moves">Ходов: 0</div>
+				<div class="scoreboard__buttons">
+					<div class="scoreboard__reload" href="#">
+						<img src="/images/reload.svg" alt="reload">
+					</div>
+					<div class="scoreboard__exit">
+						<a href="index.html">
+							<img src="/images/exit.svg" alt="exit">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<table class="card-game__board" data-gamemode="0"></table>
+
+		<div class="popup">
+			<div class="popup__container">
+				<h2 class="popup__title">Поздравляем!</h2>
+				<div class="popup__img">
+					<img src="/images/pass.png" alt="pass">
+				</div>
+				<div class="popup__content">
+					Результаты
+					<div class="popup__items">
+						<div class="popup__item">
+							Время: <span class="popup-time"></span>
+						</div>
+						<div class="popup__item">
+							Ходов: <span class="popup-turns"></span>
+						</div>
+					</div>
+				</div>
+				<div class="popup__buttonbar">
+					<a class="popup__link" href="#" onclick="location.reload();">Попробовать ещё раз</a>
+					<a class="popup__link" href="index.html">Вернуться в меню</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+
+	<script src="js/main.js"></script>
+	<script src="js/scoreboard.js"></script>
+
+</body>
+
+</html>
