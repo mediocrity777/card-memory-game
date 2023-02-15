@@ -131,7 +131,7 @@ function fillBoard(board) {
 			card.classList.add('card__container', `${'pic' + arrOfPics[index]}`);
 
 			let cardPicture = document.createElement('img');
-			cardPicture.src = `${'../images/pic' + arrOfPics[index] + '.png'}`;
+			cardPicture.src = `${'./images/pic' + arrOfPics[index] + '.png'}`;
 			cardPicture.classList.add('front-face');
 			card.appendChild(cardPicture);
 
